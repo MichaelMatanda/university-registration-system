@@ -1,0 +1,117 @@
+<div class="leftpanel main hidden-print" th:fragment="leftpanel" id="sidebar">
+    <div class="media profile-left">
+        <a class="pull-left profile-thumb" href="#">
+            <img class="img-circle" th:src="@{/images/profile_blank.png}" alt="">
+        </a>
+        <div class="media-body">
+            <h4 class="media-heading"><span th:text="${#authentication?.getPrincipal()?.username}">
+            </span></h4>
+            <small class="text-muted">
+                <span
+                        th:text="'('+  ${#authentication?.getPrincipal()?.user.shop?.name} +')'"/></small>
+        </div>
+    </div><!-- media -->
+    <h5 class="leftpanel-title">Menu</h5>
+    <ul class="nav nav-pills nav-stacked">
+        <li class="parent" th:classappend="|${allWarehouses} ${checkWarehouseStock} ${allCustomers} ${allProducts} ${productByCode} ${customerByCode}|">
+            <a href="#"><i class="fa fa-home"></i>
+                <span>Warehouses</span></a>
+            <ul class="children collapse"  id="#">
+                <li th:classappend="${dashboard}"><a th:href="@{/warehouses/dashboard}">Dashboard</a></li>
+                <li th:classappend="${allCustomers}"><a th:href="@{/customers/all}">Customers</a></li>
+                <li th:classappend="${allProducts}"><a th:href="@{/products/all}">Products</a></li>
+                <li th:classappend="${allProducts}"><a th:href="@{/warehouses/check-stock}">Check Stock(by Code)</a></li>
+            </ul>
+        </li>
+        <li sec:authorize="hasAnyRole('ADMINISTRATOR', 'SHOP_SUPERVISOR', 'CASHIER', 'FINANCE_ADMIN')" class="parent" th:classappend="|${rating} ${searchRate}|"><a href="#"><i class="fa fa-exchange"></i>
+            <span>Currencies & Rates</span></a>
+            <ul class="children collapse"  id="#">
+                <li sec:authorize="hasAnyRole('FINANCE_ADMIN')" th:classappend="${exchangeRate}"  ><a th:href="@{/exchange-rates/add-rate}">Add Exchange Rate</a></li>
+                <li th:classappend="${searchRate}"><a th:href="@{/exchange-rates/search}">Search  Rate</a></li>
+                <li th:classappend="${exchangeRate}"  ><a th:href="@{/exchange-rates/all}">View Exchange Rate</a></li>
+            </ul>
+        </li>
+        <li sec:authorize="hasAnyRole('ADMINISTRATOR', 'SHOP_SUPERVISOR', 'FINANCE_ADMIN', 'CASHIER')" class="parent" th:classappend="|${prices} $products|"><a href="#"><i class="fa fa-dollar"></i>
+            <span>Product & Prices</span></a>
+            <ul class="children collapse"  id="#">
+              <li sec:authorize="hasAnyRole('FINANCE_ADMIN','ADMINISTRATOR')" th:classappend="${product}"><a th:href="@{/prices/search-product}">Search  Product</a></li>
+                <li sec:authorize="hasAnyRole('FINANCE_ADMIN','ADMINISTRATOR')" th:classappend="${prices}"  ><a th:href="@{/prices/add-price}">Add Price Details</a></li>
+                <li sec:authorize="hasAnyRole('FINANCE_ADMIN','ADMINISTRATOR')" th:classappend="${prices}"  ><a th:href="@{/prices/add-product}">Add Product Details</a></li>
+              <li sec:authorize="hasAnyRole('FINANCE_ADMIN','ADMINISTRATOR')" th:classappend="${prices}"  ><a th:href="@{/prices/upload-price}">Upload Price List</a></li>
+                <li th:classappend="${prices}"  ><a th:href="@{/prices/all}">Prices List</a></li>
+<!--                <li sec:authorize="hasAnyRole('FINANCE_ADMIN','ADMINISTRATOR')" th:classappend="${products}"  ><a th:href="@{/prices/all-products}">Products List</a></li>-->
+
+            </ul>
+        </li>
+        <li class="parent" sec:authorize="hasAnyRole('ADMINISTRATOR', 'SHOP_SUPERVISOR', 'CASHIER')" th:classappend="|${receipting} ${searchReceipt} ${searchBill}|"><a href="#"><i class="fa fa-money"></i>
+            <span>Receipting</span></a>
+            <ul class="children collapse"  id="#">
+                <li sec:authorize="hasAnyRole('CASHIER','SHOP_SUPERVISOR')" th:classappend="${receipting}"  ><a th:href="@{/receipts/create-receipt}">Receipting</a></li>
+                <!--                <li th:classappend="${registerDealer}"><a th:href="@{/dealers/register-dealer}">Register Dealer</a></li>-->
+                <li th:classappend="${searchReceipt}"><a th:href="@{/receipts/search/receipt}">Search Receipt</a></li>
+                <li th:classappend="${searchBill}"><a th:href="@{/bill-payment/search/bill}">Bill Payment</a></li>
+
+            </ul>
+        </li>
+        <li class="parent" sec:authorize="hasAnyRole('ADMINISTRATOR', 'SHOP_SUPERVISOR')"
+            th:classappend="|${registerUser} ${allUsers}|"><a href="usersMenu"><i class="fa fa-users"></i> <span>Users</span></a>
+            <ul class="children collapse" id="usersMenu" >
+                <li sec:authorize="hasAnyRole('ADMINISTRATOR')" th:classappend="${registerUser}"><a th:href="@{/users/register}">Register</a></li>
+                <li th:classappend="${allUsers}"><a th:href="@{/users/list}">All Users</a></li>
+            </ul>
+        </li>
+        <li class="parent" sec:authorize="hasAnyRole('ADMINISTRATOR','SHOP_SUPERVISOR','CASHIER')"
+            th:classappend="|${registerDealer} ${searchDealer} ${allDealers}|"><a href="#"><i class="fa fa-user"></i>
+            <span>Dealers</span></a>
+            <ul class="children collapse"  id="#">
+                <li sec:authorize="hasAnyRole('ADMINISTRATOR','FINANCE_ADMIN','SHOP_SUPERVISOR','CASHIER')"
+                    th:classappend="${registerDealer}"><a th:href="@{/dealers/register}">Register Dealer</a></li>
+                <li>
+                </a>
+                    <ul class="children collapse">
+                        <li th:classappend="${searchDealer}"> <a th:href="@{/dealers/search}">Search Dealer (<i>byCode</i>) </a></li>
+                        <li th:classappend="${searchDealer}"><a th:href="@{/dealers/searchName}">Search Dealer (<i>byName</i>)</a></li>
+                        <li th:classappend="${searchDealer}"><a th:href="@{/dealers/searchMobile}">Search Dealer (<i>byCell</i>) </a></li>
+
+                    </ul>
+                </li>
+
+                <li sec:authorize="hasAnyRole('ADMINISTRATOR')" th:classappend="${allDealers}"><a th:href="@{/dealers/all}">View All Dealers</a></li>
+            </ul>
+        </li>
+        <li class="parent" sec:authorize="hasAnyRole('ADMINISTRATOR')"
+            th:classappend="| ${searchAccount} ${allShops}|"><a href="#"><i class="fa fa-shopping-cart"></i>
+            <span>Shops</span></a>
+            <ul class="children collapse"  id="#">
+<!--                <li sec:authorize="hasAnyRole('ADMINISTRATOR')"-->
+<!--                    th:classappend="${searchShop}"><a th:href="@{/shops/search-shop}">Search Shop Account</a></li>-->
+<!--                <li>-->
+
+                <li sec:authorize="hasAnyRole('ADMINISTRATOR')" th:classappend="${allShops}"><a th:href="@{/shops/all}">View All Accounts</a></li>
+
+            </ul>
+        </li>
+
+        <li class="parent" sec:authorize="hasAnyRole('CASHIER')"
+            th:classappend="${cashPositions}"><a href="#"><i class="fa fa-clock-o"></i>
+            <span>EOD Processing</span></a>
+            <ul class="children collapse" id="#">
+
+                <li sec:authorize="hasAnyRole('CASHIER')"><a th:href="@{/cashposition/add}">Daily Cash Position</a></li>
+            </ul>
+        </li>
+
+        <li class="parent" sec:authorize="hasAnyRole('ADMINISTRATOR', 'FINANCE_ADMIN', 'SHOP_SUPERVISOR', 'CASHIER', 'AUDIT')"
+        th:classappend="${cashPositions}"><a href="#"><i class="fa fa-file"></i>
+            <span>Reports</span></a>
+            <ul class="children collapse" id="#">
+
+                 <li><a th:href="@{/reports/generate-banking-currencies}">Banking Report </a></li>
+                <li><a th:href="@{/reports/generate-shop-banking}">Banking Report (<i>SHOP</i>)</a></li>
+                <li sec:authorize="hasAnyRole('ADMINISTRATOR', 'AUDIT')"><a th:href="@{/reports/generate-control}">Control Report</a></li>
+                <li sec:authorize="hasAnyRole('ADMINISTRATOR', 'AUDIT')"><a th:href="@{/reports/generate-modification}">Modification Report</a></li>
+            </ul>
+        </li>
+
+    </ul>
+</div><!-- leftpanel -->

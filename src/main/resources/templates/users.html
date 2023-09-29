@@ -17,30 +17,28 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
+                <li class="nav-item" align="left">
                     <a class="nav-link active" aria-current="page" data-th-href="@{/logout}">Logout</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
-<div class="container">
-    <div class="row col-md-10">
-        <h2>Registered Users</h2>
+<div class="container-fluid text-center">
+    <div >
+        <h2>Users Report</h2>
     </div>
     <table class="table table-bordered table-hover">
         <thead class="table-dark">
         <tr>
-            <th>First Name</th>
+            <th>E-mail</th>
             <th>Last Name</th>
-            <th>Email</th>
         </tr>
         </thead>
         <tbody>
-        <tr data-th-each = "user : ${users}">
-            <td data-th-text = "${user.firstName}"></td>
-            <td data-th-text = "${user.lastName}"></td>
+        <tr data-th-each = "user : ${users}" >
             <td data-th-text = "${user.email}"></td>
+            <td data-th-text = "${user.lastName}"></td>
         </tr>
         </tbody>
     </table>

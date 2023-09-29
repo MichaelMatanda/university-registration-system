@@ -21,8 +21,6 @@ public class CustomAuthenticationProvider  implements AuthenticationProvider {
         final String email = authentication.getName();
         final String password = authentication.getCredentials().toString();
         UserDetails user = userDetailsService.loadUserByUsername(email);
-
-        System.out.println("Attempting to authenticate");
         if(passwordEncoder.matches(password, user.getPassword())){
             return createToken(user);
         } else {

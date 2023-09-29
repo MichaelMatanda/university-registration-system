@@ -1,0 +1,68 @@
+<div th:fragment="scripts">
+ <script type="text/javascript" th:src="@{/other/js/jquery-1.11.1.min.js}"></script>
+ <script type="text/javascript" th:src="@{/other/js/jquery-ui-1.10.3.min.js}"></script>
+ <script type="text/javascript" th:src="@{/other/js/jquery-migrate-1.2.1.min.js}"></script>
+ <script type="text/javascript" th:src="@{/other/js/bootstrap.min.js}"></script>
+ <script type="text/javascript" th:src="@{/other/js/bootstrap-select.js}"></script>
+ <script type="text/javascript" th:src="@{/other/js/modernizr.min.js}"></script>
+ <script type="text/javascript" th:src="@{/other/js/pace.min.js}"></script>
+ <script type="text/javascript" th:src="@{/other/js/retina.min.js}"></script>
+ <script type="text/javascript" th:src="@{/other/js/jquery.cookies.js}"></script>
+ <script type="text/javascript" th:src="@{/other/js/custom.js}"></script>
+ <script type="text/javascript" th:src="@{/other/js/dropzone.min.js}"></script>
+
+
+ <script type="text/javascript" th:src="@{/other/js/bootstrap-wizard.min.js}"></script>
+ <script type="text/javascript" th:src="@{/other/js/bootstrap-timepicker.min.js}"></script>
+ <script type="text/javascript" th:src="@{/other/js/jquery.tagsinput.min.js}"></script>
+ <script type="text/javascript" th:src="@{/other/js/jquery.autogrow-textarea.js}"></script>
+<!-- <script type="text/javascript" th:src="@{/other/js/select2.min.js}"></script>-->
+ <script type="text/javascript" th:src="@{/other/js/jquery.dataTables.min.js}"></script>
+ <script type="text/javascript" th:src="@{/other/js/jquery.validate.min.js}"></script>
+ <script type="text/javascript" th:src="@{/other/js/dataTables.bootstrap.js}"></script>
+ <script type="text/javascript" th:src="@{/other/js/ochsol-form-wizard.js}"></script>
+
+ <script type="text/javascript" th:src="@{/other/js/html5shiv.js}"></script>
+ <script type="text/javascript" th:src="@{/other/js/respond.min.js}"></script>
+ <script type="text/javascript" th:src="@{/other/js/ochsol-scripts.js}"></script>
+ <script type="text/javascript" th:src="@{/other/js/dataTables.buttons.min.js}"></script>
+ <script type="text/javascript" th:src="@{/other/js/buttons.flash.min.js}"></script>
+ <script type="text/javascript" th:src="@{/other/js/jszip.min.js}"></script>
+ <script type="text/javascript" th:src="@{/other/js/pdfmake/pdfmake.min.js}"></script>
+ <script type="text/javascript" th:src="@{/other/js/pdfmake/vfs_fonts.js}"></script>
+ <script type="text/javascript" th:src="@{/other/js/buttons.html5.min.js}"></script>
+<!-- <script type="text/javascript" th:src="@{/other/js/buttons.bootstrap.min.js}"></script>-->
+ <script type="text/javascript" th:src="@{/other/js/buttons.print.min.js}"></script>
+ <script type="text/javascript" th:unless="${failureMessage==null}">
+  setTimeout(function () {
+   document.getElementById('failureMessage').innerHTML = "";
+   document.getElementById('failureMessage').hidden = true;
+  }, 5000);
+ </script>
+ <script type="text/javascript" th:unless="${successMessage==null}">
+  setTimeout(function () {
+   document.getElementById('successMessage').innerHTML = "";
+   document.getElementById('successMessage').hidden = true;
+  }, 5000);
+ </script>
+ <script type="text/javascript">
+  function printReceipts()
+  {
+   printDiv = "#receipt"; // id of the div you want to print
+   printButton = "#printButton"; // id of the div you want to print
+   $("*").addClass("no-print");
+   $(printDiv+" *").removeClass("no-print");
+   $(printDiv).removeClass("no-print");
+   $(printButton).addClass("no-print");
+
+   parent =  $(printDiv).parent();
+   while($(parent).length)
+   {
+    $(parent).removeClass("no-print");
+    parent =  $(parent).parent();
+   }
+   window.print();
+
+  }
+ </script>
+</div>

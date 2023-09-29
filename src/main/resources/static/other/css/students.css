@@ -1,0 +1,284 @@
+.form-label{
+    margin-left: 3px;
+    font-weight: bold;
+    color: #ee7308;
+    font-size: 0.6em;
+    margin-bottom: 0px !important;
+}
+.form-card {
+    padding: 5px 30px 30px;
+    margin: auto;
+    width: 100%;
+    /*max-width: 448px;*/
+    background: white;
+    border-radius: 4px;
+    box-shadow: rgba(60, 66, 87, 0.12) 0px 7px 14px 0px, rgba(0, 0, 0, 0.12) 0px 3px 6px 0px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.padding-top--24 {
+    padding-top: 24px;
+}
+.margin-top--80 {
+    margin-top: 80px;
+}
+.margin-top--10 {
+    margin-top: 10px;
+}
+
+.crs-button{
+    width: 100px;
+    color: #fff !important;
+    background-color: #ee7308;
+    border-color: #ee7308;
+    margin: 5px;
+}
+.crs-button2{
+    width: 150px;
+    color: #fff !important;
+    background-color: #ee7308;
+    border-color: #ee7308;
+    margin: 5px;
+}
+
+.input:focus {
+    outline: none !important;
+    border:1px solid #ee730891;;
+    box-shadow: 0 0 10px #ee730891;
+}
+
+.form-hr{
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+input[type=date]{
+line-height: normal;
+}
+
+.center-table{
+    margin: 0 auto;
+}
+
+.receipt-logo{
+    width: 250px;
+}
+
+.crs-icon{
+    margin-left: 10px;
+}
+
+.hidden{
+    display:none;
+}
+
+/*products table data top border*/
+.crs-td{
+    border-top:none !important;
+    font-size: 13px !important;
+}
+
+.invalid{
+    color: red !important;
+    font-size: 10px !important;
+}
+
+.card-header {
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: rgba(0,0,0,.03);
+    border-bottom: 1px solid rgba(0,0,0,.125);
+}
+
+.float-right{
+    float: right !important;
+}
+
+/*Dealer search*/
+#myInput {
+    background-image: url('/css/searchicon.png'); /* Add a search icon to input */
+    background-position: 10px 12px; /* Position the search icon */
+    background-repeat: no-repeat; /* Do not repeat the icon image */
+    width: 100%; /* Full-width */
+    font-size: 16px; /* Increase font-size */
+    padding: 12px 20px 12px 40px; /* Add some padding */
+    border: 1px solid #ddd; /* Add a grey border */
+    margin-bottom: 12px; /* Add some space below the input */
+}
+
+#dealerUl {
+    /* Remove default list styling */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#dealerUl li a {
+    border: 1px solid #ddd; /* Add a border to all links */
+    margin-top: -1px; /* Prevent double borders */
+    background-color: #f6f6f6; /* Grey background color */
+    padding: 12px; /* Add some padding */
+    text-decoration: none; /* Remove default text underline */
+    font-size: 18px; /* Increase the font-size */
+    color: black; /* Add a black text color */
+    display: block; /* Make it into a block element to fill the whole list */
+}
+
+#shopUl {
+    /* Remove default list styling */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#shopUl li a {
+    border: 1px solid #ddd; /* Add a border to all links */
+    margin-top: -1px; /* Prevent double borders */
+    background-color: #f6f6f6; /* Grey background color */
+    padding: 12px; /* Add some padding */
+    text-decoration: none; /* Remove default text underline */
+    font-size: 18px; /* Increase the font-size */
+    color: black; /* Add a black text color */
+    display: block; /* Make it into a block element to fill the whole list */
+}
+.productsUl {
+    /* Remove default list styling */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.productsUl li a {
+    border: 1px solid #ddd; /* Add a border to all links */
+    margin-top: -1px; /* Prevent double borders */
+    background-color: #f6f6f6; /* Grey background color */
+    padding: 12px; /* Add some padding */
+    text-decoration: none; /* Remove default text underline */
+    font-size: 18px; /* Increase the font-size */
+    color: black; /* Add a black text color */
+    display: block; /* Make it into a block element to fill the whole list */
+}
+
+#dealerUl li a:hover:not(.header) {
+    background-color: #eee; /* Add a hover effect to all links, except for headers */
+}
+
+
+.dealerCardName{
+    color: black;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.dealerCardCode{
+    color: black;
+    font-size: 13px;
+}
+
+.dealerCardPhoneNumber{
+    color: black;
+    font-size: 13px;
+}
+
+#shopUl li a:hover:not(.header) {
+    background-color: #eee; /* Add a hover effect to all links, except for headers */
+}
+
+.shopCardName{
+    color: black;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.shopCardCode{
+    color: black;
+    font-size: 13px;
+}
+
+/*paymode table css*/
+
+.width30percent{
+    width: 30%;
+}
+
+.width60percent{
+    width: 60%;
+}
+
+*{
+   box-sizing: border-box;
+}
+
+ students-container{
+ float:left;
+ align-items: left;
+ }
+
+students-body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Float four columns side by side */
+.students-column {
+  float: left;
+  width: 20%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.students-row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.students-row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* Style the counter cards */
+.students-card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 0px;
+  width: 80%;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+.students-search{
+    align-items: center;
+    justify-content: left;
+    border-bottom-width: thick;
+    color:primary;
+}
+.col-md-2 col-lg-3{
+     text-align: center;
+     padding: 2px;
+     width: 5px;
+}
+}
+.students-bordert{
+    border-top: 1px solid #aaa;
+    position: relative;
+    padding-top: 0.4rem;
+}
+
+.students-bordert:after{
+    position: absolute;
+    top: -17px;
+    left:33%;
+    padding-bottom: 0.7rem;
+}
+.divScroll {
+   Overflow-y:scroll;
+   height:1000px;
+   width:1000px;
+}
+.my-5{
+    color:orange;
+    font-size: 13px;
+}
+
+

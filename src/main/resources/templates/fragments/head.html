@@ -1,0 +1,19 @@
+<head data-th-fragment="head" id="head">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title data-th-if="${pageTitle==null}" data-th-text="${@environment.getProperty('system-title')}"></title>
+    <title data-th-if="${pageTitle!=null}" data-th-text="${pageTitle}"></title>
+    <link rel="shortcut icon" type="image/x-icon" data-th-href="@{/images/favicon.ico}"/>
+    <link rel="stylesheet" data-th-href="@{/other/css/style.default.css}" type="text/css"/>
+    <link rel="stylesheet" data-th-href="@{/other/css/bootstrap-select.css}" type="text/css"/>
+    <link rel="stylesheet" data-th-href="@{/other/css/morris.css}" type="text/css"/>
+<!--    <link rel="stylesheet" th:href="@{/other/css/select2.css}" type="text/css"/>-->
+    <link rel="stylesheet" data-th-href="@{/other/css/style.datatables.css}" type="text/css"/>
+    <link rel="stylesheet" data-th-href="@{/other/css/dataTables.responsive.css}" type="text/css"/>
+    <link rel="stylesheet" data-th-href="@{/other/css/bootstrap-timepicker.min.css}" type="text/css"/>
+    <link rel="stylesheet" data-th-href="@{/other/css/dropzone.css}" type="text/css"/>
+    <link rel="stylesheet" data-th-href="@{/other/css/buttons.dataTables.min.css}" type="text/css"/>
+<!--    <link rel="stylesheet" th:href="@{/other/css/buttons.bootstrap.min.css}" type="text/css"/>-->
+    <link rel="stylesheet" data-th-href="@{/other/css/ochsol.css}" type="text/css"/>
+    <link rel="stylesheet" data-th-href="@{/other/css/crs.css}" type="text/css"/>
+    <link rel="stylesheet" data-th-href="@{/other/css/jquery.dataTables.css}" type="text/css"/>
+</head>

@@ -1,0 +1,179 @@
+.selectpicker{
+    data-style:btn-default;
+}
+ .dropzone {
+     height: 270px;
+     min-height: 270px !important;
+ }
+
+.pop{
+    /* border-style:solid;
+     border-width:1px;
+     border-color:#CCC;
+     background-color:#FFF;
+      background: #f7fafe; /* For browsers that do not support gradients */
+    /*  background: -webkit-linear-gradient(#f7fafe, #fbfcfe); /* For Safari 5.1 to 6.0 */
+    /* background: -o-linear-gradient(#f7fafe, #fbfcfe); /* For Opera 11.1 to 12.0 */
+    /* background: -moz-linear-gradient(#f7fafe, #fbfcfe); /* For Firefox 3.6 to 15 */
+    /* background: linear-gradient(#f7fafe, #fbfcfe); /* Standard syntax */
+    position:fixed;
+    left: 50%;
+    top: 50%;
+    -ms-transform: translate(-50%,-50%);
+    -moz-transform:translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    z-index:200;
+    visibility:hidden;
+    padding: 10px;
+    width:90%;
+    /*-moz-border-radius: 5px; -webkit-border-radius: 5px; */
+}
+.pop tr td {
+    padding: 5px;
+}
+
+
+.dt-button.red {
+    color: red;
+}
+
+.dt-button.orange {
+    color: orange;
+}
+
+.dt-button.green {
+    color: green;
+}
+.dt-button.primary {
+    color: #428bca;
+}
+
+
+.nav>ul>ul>li {
+    position: relative;
+    display: block;
+    padding: 5px 10px;
+}
+
+.nav>ul>ul>li>a {
+    position: relative;
+    display: block;
+    padding: 5px 10px;
+    outline: none !important;
+    background: 0 0;
+    width: inherit;
+    height: inherit;
+}
+
+
+.leftpanel .nav > ul > ul  {
+    margin: 0 1px 0 0;
+    font-size: 14px;
+    font-weight: 500;
+    border-top: 1px solid #e7e7e7;
+    position: relative;
+}
+
+.leftpanel .nav > ul > ul > li {
+    margin: 0 1px 0 0;
+    font-size: 14px;
+    font-weight: 500;
+    border-top: 1px solid #e7e7e7;
+    position: relative;
+    display: block;
+    padding-inline-start: 0px; !important;
+}
+
+.leftpanel .nav > ul > ul > li.active > a i {
+    color: #fff;
+}
+
+.leftpanel .nav > ul > ul > li.parent:after {
+    font-family: 'FontAwesome';
+    content: '\f107';
+    display: block;
+    position: absolute;
+    top: 12px;
+    right: 22px;
+    color: #ccc;
+}
+
+.leftpanel .nav > ul > ul > li.parent-focus > a {
+    background-color: #f7f7f7;
+}
+
+.leftpanel .nav > ul > a:hover,
+.leftpanel .nav > ul > a:focus,
+.leftpanel .nav > ul > a:active{
+    background-color: #f7f7f7;
+}
+
+.leftpanel .nav > ul{
+    /*padding-left: auto;
+    width: 229px;
+    height: 44px;
+    background-color: #3a87ad;*/
+    position: relative;
+    display: block;
+    padding-inline-start: 0px; !important;
+    font-size: 14px;
+    font-weight: 500;
+    border-top: 1px solid #e7e7e7;
+    text-align: -webkit-match-parent;
+}
+
+
+.leftpanel .nav > ul > a {
+    margin: 0 1px 0 0;
+    display: block;
+    width: inherit;
+    height: inherit;
+    color: #000000;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    -moz-transition: all 0.2s ease-out 0s;
+    -webkit-transition: all 0.2s ease-out 0s;
+    transition: all 0.2s ease-out 0s;
+    padding: 12px 15px;
+
+    outline: none !important;
+    background: 0 0;
+}
+
+
+.leftpanel .nav > ul > ul > li > a:hover,
+.leftpanel .nav > ul > ul > li > a:focus,
+.leftpanel .nav > ul > ul > li > a:active{
+    background-color: #f7f7f7;
+}
+
+#overall-medical-compliance {
+    left: 0px;
+    height: 250px;
+}
+#flotTip {
+    padding: 3px 5px;
+    background-color: #090;
+    z-index: 100;
+    color: black;
+    opacity: .80;
+    filter: alpha(opacity=85);
+}
+
+@media print {
+
+    .no-print{
+        display : none !important;
+    }
+}
+
+#logo{
+    width: 280px;
+    padding-bottom: 40px;
+    color: white !important;
+}
+#printButton{
+    color: white !important;
+}

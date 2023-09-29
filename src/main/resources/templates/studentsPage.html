@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to my application </title>
+    <link rel="stylesheet" data-th-href="@{/other/css/students.css}" type="text/css"/>
+    <link rel="stylesheet" type="text/css" data-th-href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+    <link rel="stylesheet" data-th-href="@{/other/css/students.css}" type="text/css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand">University Registration System</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" data-th-href="@{/logout}">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav><br/><br/>
+<div align="center">
+<div class="col-md-10">
+    <div class="students-container">
+                    <div class="students-card" >
+                        <p align-contents="left">Add Student</p>
+                        <p class="my-5">
+                            <a href="">View</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+<div class="col-md-10">
+    <div class="students-container">
+                    <div class="students-card">
+                        <p align-contents="left">Update Student</p>
+                        <p class="my-5">
+                            <a href="">View</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+<div class="col-md-10">
+    <div class="students-container">
+                    <div class="students-card" >
+                        <p align-contents="left">Students Report</p>
+                        <p class="my-5">
+                            <a href="">View</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+    <div class="col-md-10">
+        <div class="students-container">
+            <div class="students-card" >
+                <p align-contents="left">Users Report</p>
+                <p class="my-5">
+                    <a href="/users">View</a>
+                </p>
+            </div>
+        </div>
+    </div>
+      </div>
+</body>
+</html>

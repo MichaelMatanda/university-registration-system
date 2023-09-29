@@ -24,9 +24,24 @@ public class UserServiceImpl implements UserService{
         this.passwordEncoder = passwordEncoder;
     }
     @Override
+//    public void saveUser(UserDto userDto){
+//        User user = new User();
+//        user.setName(userDto.getFirstName() + " " + userDto.getLastName());
+//        user.setEmail(userDto.getEmail());
+//        user.setPassword(passwordEncoder.encode(userDto.getPassword()));
+//
+//        Role role = roleRepository.findByName("ROLE_ADMIN");
+//        if(role == null){
+//            role = checkRoleExist();
+//        }
+//        user.setRoles(List.of(role));
+//        userRepository.save(user);
+//    }
+
     public void saveUser(UserDto userDto){
         User user = new User();
-        user.setName(userDto.getFirstName() + " " + userDto.getLastName());
+        user.setFirstName(userDto.getFirstName());
+        user.setLastName(userDto.getLastName());
         user.setEmail(userDto.getEmail());
         user.setPassword(passwordEncoder.encode(userDto.getPassword()));
 
@@ -37,6 +52,7 @@ public class UserServiceImpl implements UserService{
         user.setRoles(List.of(role));
         userRepository.save(user);
     }
+
     @Override
     public User findUserByEmail(String email){
         return userRepository.findByEmail(email);
@@ -48,12 +64,21 @@ public class UserServiceImpl implements UserService{
                 .map(this::mapToUserDto)
                 .collect(Collectors.toList());
     }
+//    private UserDto mapToUserDto(User user){
+//        UserDto userDto = new UserDto();
+//        String[] str = user.getName().split("");
+//        userDto.setFirstName(str[0]);
+//        userDto.setLastName(str[1]);
+//        userDto.setEmail(user.getEmail());
+//        return userDto;
+//    }
+
     private UserDto mapToUserDto(User user){
         UserDto userDto = new UserDto();
-        String[] str = user.getName().split("");
-        userDto.setFirstName(str[0]);
-        userDto.setLastName(str[1]);
+        userDto.setFirstName(userDto.getFirstName());
+        userDto.setLastName(user.getLastName());
         userDto.setEmail(user.getEmail());
+        userDto.setPassword(user.getPassword());
         return userDto;
     }
     private Role checkRoleExist(){
@@ -61,4 +86,4 @@ public class UserServiceImpl implements UserService{
         role.setName("Role_ADMIN");
         return roleRepository.save(role);
     }
-    }
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head lang="en" th:replace="fragments/head :: head"></head>
+<link rel="stylesheet" th:href="@{/other/css/warehouse-dashboard.css}" type="text/css"/>
+<body>
+<header th:replace="fragments/navheader :: header"></header>
+<section>
+    <div class="mainwrapper">
+<div th:replace="fragments/sidebar :: leftpanel"></div>
+    <div class="mainpanel">
+        <div class="col-md-10">
+            <div class="warehouse-container">
+                <div class="row">
+                    <div class="divScroll">
+                    <div class="mx-3 my-2 py-2 bordert"><br>
+                    <div class="col-md-3 col-lg-4" th:each="warehouse : ${warehouseData}">
+                    <div class="warehouse-card" >
+<!--                        <p th:text="${warehouse.warehouse}">...</p>-->
+                        <p th:text="${warehouse.description}" align-contents="left">...</p>
+                        <p class="my-5">
+                            <a href="/warehouses/quantity" >View</a>
+                        </p>
+                    </div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    </div>
+</section>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<div lang="en" th:replace="fragments/scripts :: scripts"></div>
+<script type="text/javascript" th:src="@{/other/js/flot/jquery.flot.min.js}"></script>
+<script type="text/javascript" th:src="@{/other/js/flot/jquery.flot.resize.min.js}"></script>
+<script type="text/javascript" th:src="@{/other/js/flot/jquery.flot.spline.min.js}"></script>
+<script type="text/javascript" th:src="@{/other/js/jquery.sparkline.min.js}"></script>
+<script type="text/javascript" th:src="@{/other/js/morris.min.js}"></script>
+<script type="text/javascript" th:src="@{/other/js/raphael-2.1.0.min.js}"></script>
+<script type="text/javascript" th:src="@{/other/js/dashboard.js}"></script>
+<script type="text/javascript" th:src="@{/other/js/flot/jquery.flot.min.js}"></script>
+<script type="text/javascript" th:src="@{/other/js/flot/jquery.flot.resize.min.js}"></script>
+<script type="text/javascript" th:src="@{/other/js/flot/jquery.flot.spline.min.js}"></script>
+<script type="text/javascript" th:src="@{/other/js/jquery.sparkline.min.js}"></script>
+<script type="text/javascript" th:src="@{/other/js/morris.min.js}"></script>
+<script type="text/javascript" th:src="@{/other/js/raphael-2.1.0.min.js}"></script>
+<script type="text/javascript" th:src="@{/other/js/dashboard.js}"></script>
+</body>
+</html>
