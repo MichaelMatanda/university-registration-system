@@ -7,7 +7,6 @@
           rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
           crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" data-th-href="@{/webjar/bootstrap/css/bootstrap.min.css}" />
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -27,19 +26,38 @@
 </nav>
 <div class="container-fluid text-center">
     <div >
-        <h2>Users Report</h2>
+        <h2>Students Report</h2>
     </div>
     <table class="table table-bordered table-hover">
         <thead class="table-dark">
         <tr>
-            <th>E-mail</th>
-            <th>Last Name</th>
+            <th>id</th>
+            <th>email</th>
+            <th>registrationNumber</th>
+            <th>phoneNumber</th>
+            <th>firstName</th>
+            <th>lastName</th>
+            <th>nationalId</th>
+            <th>program</th>
+            <th>Decision</th>
+            <th>Action</th>
         </tr>
         </thead>
         <tbody>
-        <tr data-th-each = "user : ${users}" >
-            <td data-th-text = "${user.email}"></td>
-            <td data-th-text = "${user.lastName}"></td>
+        <tr data-th-each = "student : ${studentsList}" >
+            <td data-th-text = "${student.id}"></td>
+            <td data-th-text = "${student.email}"></td>
+            <td data-th-text = "${student.registrationNumber}"></td>
+            <td data-th-text = "${student.phoneNumber}"></td>
+            <td data-th-text = "${student.firstName}"></td>
+            <td data-th-text = "${student.lastName}"></td>
+            <td data-th-text = "${student.nationalId}"></td>
+            <td data-th-text = "${student.program}"></td>
+            <td data-th-text = "${student.decisionOfSchoolFees}"></td>
+            <td >
+                <a class="m-2" href="@{'/students/edit/'+ ${user.id}}">Edit</a>
+                <a class="m-2" href="@{'/students/delete/'+ ${user.id}}">Delete</a>
+            </td>
         </tr>
         </tbody>
     </table>

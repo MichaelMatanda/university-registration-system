@@ -29,11 +29,12 @@ public class SpringSecurity {
                 .antMatchers("/register/**").permitAll()
                 .antMatchers("/index").permitAll()
                 .antMatchers("/users").permitAll()
-                .antMatchers("/students").permitAll()
+                .antMatchers("/dashboard").permitAll()
+                .antMatchers("/students_form").permitAll()
                 .and()
                 .formLogin(
                 ).loginPage("/login")
-                 .defaultSuccessUrl("/students");
+                 .defaultSuccessUrl("/dashboard");
         return http.build();
     }
 

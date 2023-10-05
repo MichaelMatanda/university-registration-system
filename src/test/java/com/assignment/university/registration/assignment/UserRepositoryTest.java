@@ -40,16 +40,16 @@ public class UserRepositoryTest {
 //    @Test
 //    public void testAddNew(){
 //        Students students = new Students();
-//        students.setEmail("munashe@msu.ac.zw");
-//        students.setFirstName("munashe");
-//        students.setLastName("makonde");
+//        students.setEmail("tinashe@msu.ac.zw");
+//        students.setFirstName("tinashe");
+//        students.setLastName("nyamutowa");
 //        students.setDateOfBirth(LocalDate.now());
-//        students.setPhoneNumber("263712955381");
-//        students.setNationalId("62-556288X83");
+//        students.setPhoneNumber("263772892905");
+//        students.setNationalId("62-554023P55");
 //        students.setProgram("BSIT");
-//        students.setRegistrationNumber("R235824H");
+//        students.setRegistrationNumber("R232176H");
 //        students.setDecisionOfSchoolFees(true);
-//        students.setSchoolFees(BigDecimal.valueOf(400));
+//        students.setSchoolFees(BigDecimal.valueOf(200));
 //        students.setStartDate(LocalDate.now());
 //        students.setEndDate(LocalDate.now());
 //        Students savedStudents =studentsRepository.save(students);
